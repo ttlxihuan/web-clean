@@ -1,6 +1,6 @@
 // 配置说明，版本 clean-css 1.0.0
 
-const WebMinifier = require('web-minifier');
+const WebClean = require('web-clean');
 
 module.exports.options = {
     cssOptions: {
@@ -48,9 +48,9 @@ module.exports.options = {
 
 
 module.exports.run = async function (options, paths) {
-    let webMinifier = new WebMinifier(options);
+    let webClean = new WebClean(options);
     paths.forEach(item => {
-        webMinifier.addPath(item[0], item[1]); // 添加要压缩处理的 源目录 => 目标目录
+        webClean.addPath(item[0], item[1]); // 添加要压缩处理的 源目录 => 目标目录
     });
-    webMinifier.run();
+    webClean.run();
 }

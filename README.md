@@ -1,9 +1,9 @@
-# web-minifier
+# web-clean
 针对web网站的html & js & css 整体压缩处理，可以适应标签模板压缩
 
 ## 安装
 ```
-npm install web-minifier
+npm install web-clean
 ```
 
 ## html 压缩
@@ -54,8 +54,7 @@ ignoreCssSelectorError      |boolean            |true                |忽略css�
                                     
 ## 示例
 ```js
-const WebMinifier = require('web-minifier');
-let webMinifier = new WebMinifier({});
-webMinifier.addPath('要压缩的源目录', '想保存的目标目录');
-webMinifier.run();
+let webClean = new WebClean({});
+webClean.addPath('要压缩的源目录', '想保存的目标目录');
+webClean.run();
 ```
