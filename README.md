@@ -53,7 +53,7 @@ skipFileRule                |false\|RegExp\|string            |false            
 ignoreCssSelectorError      |boolean            |true                |忽略css选择器错误语句
                                     
 ## 示例
-```
+```js
 const WebMinifier = require('web-minifier');
 let webMinifier = new WebMinifier({});
 webMinifier.addPath('要压缩的源目录', '想保存的目标目录');
