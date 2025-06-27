@@ -1,0 +1,34 @@
+{
+  "name": "web-minifier",
+  "version": "1.0.0",
+  "author": "ttl <ttlxihuan@163.com>",
+  "description": "Web site minifier",
+  "license": "MIT",
+  "keywords": [
+    "web",
+    "minifier"
+  ],
+  "homepage": "https://github.com/ttlxihuan/web-minifier",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ttlxihuan/web-minifier.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ttlxihuan/web-minifier/issues"
+  },
+  "main": "index.js",
+  "files": [
+    "lib",
+    "index.js",
+    "LICENSE"
+  ],
+  "dependencies": {
+    "clean-css": "^5.0.0",
+    "html-minifier-terser": "^7.0.0",
+    "sass": "^1.80.0",
+    "terser": "^5.30.0"
+  },
+  "engines": {
+    "node": ">= 10.0"
+  }
+}
