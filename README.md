@@ -54,6 +54,7 @@ ignoreCssSelectorError      |boolean            |true                |忽略css�
                                     
 ## 示例
 ```js
+const WebClean = require('web-clean');
 let webClean = new WebClean({});
 webClean.addPath('要压缩的源目录', '想保存的目标目录');
 webClean.run();
