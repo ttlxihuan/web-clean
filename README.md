@@ -2,9 +2,9 @@
 针对web网站的html & js & css 整体压缩处理，可以适应标签模板压缩
 
 ## 优点
-- 可压缩整站html和css文件 clas、id。重命名混淆，可指定重命名。
+- 可压缩整站html和css文件 class、id。重命名混淆，可指定重命名。
 - 可压缩整站css文件的 var、font-family、animation-name。重命名混淆，可指定重命名。
-- 可删除整站css文件中未使用的 clas、id、font-family、animation-name
+- 可删除整站css文件中未使用的 class、id、font-family、animation-name
 - 压缩js代码
 
 ## 缺点
