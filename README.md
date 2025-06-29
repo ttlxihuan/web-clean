@@ -1,6 +1,19 @@
 # web-clean
 针对web网站的html & js & css 整体压缩处理，可以适应标签模板压缩
 
+## 优点
+- 可压缩整站html和css文件 clas、id。重命名混淆，可指定重命名。
+- 可压缩整站css文件的 var、font-family、animation-name。重命名混淆，可指定重命名。
+- 可删除整站css文件中未使用的 clas、id、font-family、animation-name
+- 压缩js代码
+
+## 缺点
+- css中的字体或动画名使用变量无法识别，导致字体和动画名提取可能不全，可以通过要删除的配置项进行强制处理
+- 选择器的实际层级关系无法确认，导致无法删这类未使用的样式代码
+- html模板处理需要额外指定解析配置正则
+- js中引用的 class & id 无法转换，需要指定混淆配置项进行处理
+- 不支持ts压缩转换处理
+
 ## 安装
 ```
 npm install web-clean

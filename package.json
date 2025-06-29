@@ -1,6 +1,6 @@
 {
   "name": "web-clean",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "ttl <ttlxihuan@163.com>",
   "description": "Web site minifier and clean",
   "license": "MIT",
