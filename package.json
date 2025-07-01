@@ -8,13 +8,13 @@
     "web",
     "minifier"
   ],
-  "homepage": "https://github.com/ttlxihuan/web-minifier",
+  "homepage": "https://github.com/ttlxihuan/web-clean",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ttlxihuan/web-minifier.git"
+    "url": "https://github.com/ttlxihuan/web-clean.git"
   },
   "bugs": {
-    "url": "https://github.com/ttlxihuan/web-minifier/issues"
+    "url": "https://github.com/ttlxihuan/web-clean/issues"
   },
   "main": "index.js",
   "files": [
