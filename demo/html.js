@@ -85,7 +85,7 @@ module.exports.options = {
     processScripts: [], // 与要通过缩小器处理的脚本元素类型（例如 ， ， 等）相对应的字符串数组text/ng-template,text/x-handlebars-template
     quoteCharacter: undefined || '"' || "'", // 用于属性值（' 或 “）的引号类型
     removeAttributeQuotes: false, // 尽可能删除属性周围的引号
-    removeComments: false, // 剥离 HTML 注释
+    removeComments: false || true || Function(attrName, tag), // 剥离 HTML 注释
     // 删除所有具有仅空格或空值的属性
     // 可选值：
     //      false           不删除空属性
@@ -101,8 +101,8 @@ module.exports.options = {
     removeScriptTypeAttributes: false, // 删除script标签的type属性
     removeStyleLinkTypeAttributes: false, // 删除link标签的type属性
     removeTagWhitespace: false, // 尽可能删除属性之间的空格。请注意，这将导致无效的 HTML！
-    sortAttributes: false, // 	按频率对属性进行排序
-    sortClassName: false, // 按频率对样式类进行排序
+    sortAttributes: false || true || Function(tag, attrs), // 	按频率对属性进行排序
+    sortClassName: false || true || Function(classAttrValue), // 按频率对样式类进行排序
     trimCustomFragments: false, // 修剪 周围的空白区域。ignoreCustomFragments
     useShortDoctype: false // 将 doctype 替换为短 （HTML5） doctype
 }

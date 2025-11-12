@@ -16,8 +16,8 @@
 - css & js 语句不支持模板标签
 
 ## 安装
-```
-npm install web-clean
+```shell
+npm install -g web-clean
 ```
 
 ## html 压缩
@@ -66,11 +66,16 @@ removeHtmlAttrs       |Array\|Object\|Function(tag, attrName, attrValue)  |{}   
 makeSourceMap               |boolean            |false               |是否生成map文件，不建议开启
 skipFileRule                |false\|RegExp\|string            |false               |跳过处理文件
 ignoreCssSelectorError      |boolean            |true                |忽略css选择器错误语句
+skipControlCss      |boolean            |false                |忽略控件样式混淆，当有与js同名的css视为控件，可控件样式关联的标识不混淆或删除
                                     
 ## 示例
+```shell
+web-clean ./ ../min/ --skip-control-css
+```
+
 ```js
 const WebClean = require('web-clean');
-let webClean = new WebClean({}, 'blade'); // 压缩blade模板
+let webClean = new WebClean({skipControlCss：true});
 webClean.addPath('要压缩的源目录', '想保存的目标目录');
 webClean.run();
 ```
