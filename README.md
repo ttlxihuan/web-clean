@@ -70,7 +70,7 @@ skipControlCss      |boolean            |false                |忽略控件样�
                                     
 ## 示例
 ```shell
-web-clean ./ ../min/ --skip-control-css
+web-clean ../min/ ./ --skip-control-css
 ```
 
 ```js

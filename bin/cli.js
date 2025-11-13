@@ -1,10 +1,10 @@
-/*
- * web压缩cli命令入口
- */
+#!/usr/bin/env node
+"use strict"
+
 const fs = require('fs');
 const WebClean = require("../index");
 const program = require("commander");
-const package = require("../package.json");
+const packageJson = require("../package.json");
 
 function jsonParse(str) {
     return JSON.parse(str);
@@ -26,8 +26,8 @@ function fileParse(filename) {
     throw new program.InvalidArgumentError('Not a file: ' + filename);
 }
 
-program.name(package.name);
-program.version(package.name + ' ' + package.version);
+program.name(packageJson.name);
+program.version(packageJson.name + ' ' + packageJson.version);
 
 program.argument("<output-dir>", 'Compressed output directory.');
 program.argument("[source-dir...]", 'Compress source directory.', dirParse, ['./']);
