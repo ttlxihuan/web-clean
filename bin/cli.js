@@ -48,6 +48,7 @@ program.option("--html-options [json]", "HTML compression options. JSON format."
 // 压缩选项配置文件
 program.option("--options-file [file]", "Compress the option configuration file in JSON format.", fileParse);
 program.option("--skip-file-exts [exts]", "Skip the compression file extension.");
+program.option("--ignore-file-exts [exts]", "Ignore the file extension.");
 program.option("--skip-control-css", "Skip the compression and obfuscation of CSS properties such as id, class, var, and fonts for the control elements. When there are js files with the same name, they are regarded as control styles.");
 
 // css&html混淆压缩选项
@@ -77,6 +78,10 @@ program.option("--clean-tags [tags]", "Delete tags, separated by multiple commas
 
 // 其它选项
 program.option("--error-exit", "Compression error occurred and has stopped.", false);
+program.option("--localize", "Localize all resources. Remote resources will be automatically downloaded and transferred to the local area.", false);
+program.option("--mangle-localize [paths]", "Confusing the local resource path and file name.");
+program.option("--absolute-path", "All local resources use absolute paths by default, with relative paths being the alternative.", false);
+program.option("--base-url [url]", "Specify the local base URL address. Using the --localize option is ineffective.", false);
 
 if (process.argv.length <= 2) {
     program.help();
@@ -188,6 +193,15 @@ if (_options.skipFileExts) {
 if (_options.skipControlCss) {
     options.skipControlCss = true;
 }
+if (_options.ignoreFileExts) {
+    options.ignoreFileRule = _options.ignoreFileExts;
+}
+options.localize = _options.localize;
+if (options.mangleLocalize) {
+    options.mangleLocalize = toConfig(_options.mangleLocalize);
+}
+options.absolutePath = _options.absolutePath;
+options.baseUrl = _options.baseUrl;
 options.ignoreCssSelectorError = !_options.errorExit;
 
 let webclean = WebClean(options, _options.htmlTemplate || null);

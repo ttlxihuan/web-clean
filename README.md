@@ -44,11 +44,11 @@ npm install -g web-clean
 ## 配置说明
 配置名              |数据类型            |默认值         |配置说明
 :-------------------|:------------------|:---------------|:---------------
-cssOptions          |object\|Function(WebClean, cssMinifier)   |[查看](lib/options.js)          |css压缩配置信息[参考](demo/css.js)
+cssOptions          |object\|Function(code, options)   |[查看](lib/options.js)          |css压缩配置信息[参考](demo/css.js)
 cssFileRule         |string\|RegExp     |css             |css文件匹配后缀名或正则
-jsOptions           |string\|Function(WebClean, jsMinifier)   |[查看](lib/options.js)          |js压缩配置信息[参考](demo/js.js)
+jsOptions           |string\|Function(code, options)   |[查看](lib/options.js)          |js压缩配置信息[参考](demo/js.js)
 jsFileRule          |string\|RegExp     |js              |js文件匹配后缀名或正则
-htmlOptions         |string\|Function(WebClean, htmlMinifier)   |[查看](lib/options.js)          |html压缩配置信息[参考](demo/html.js)
+htmlOptions         |string\|Function(code, options)   |[查看](lib/options.js)          |html压缩配置信息[参考](demo/html.js)
 htmlFileRule        |string\|RegExp     |html|htm        |html文件匹配后缀名或正则
 mangleClassIdentifiers         |false\|Object  |{}          |指定混淆class名的对照表（影响 html、css 文件），默认会生成混淆名
 mangleIdIdentifiers            |false\|Object  |{}          |指定混淆id名的对照表（影响 html、css 文件），默认会生成混淆名
@@ -67,6 +67,10 @@ makeSourceMap               |boolean            |false               |是否生�
 skipFileRule                |false\|RegExp\|string            |false               |跳过处理文件
 ignoreCssSelectorError      |boolean            |true                |忽略css选择器错误语句
 skipControlCss      |boolean            |false                |忽略控件样式混淆，当有与js同名的css视为控件，可控件样式关联的标识不混淆或删除
+localize      |boolean            |false                |是下将远程资源文件下载到本地，并替换成本地路径，模板处理时慎用。
+mangleLocalize      |false\|Object            |false                |指定混淆本地资源路径的对照表（影响非html文件），默认会生成混淆名，模板处理时慎用。
+absolutePath      |boolean            |false                |是否将本地路径改为绝对路径，模板处理时慎用。
+baseUrl      |boolean            |false                |给本地资源指定根地址，所有本地资源将按远程地址处理
                                     
 ## 示例
 ```shell
