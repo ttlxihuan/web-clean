@@ -243,5 +243,5 @@ module.exports.run = async function (code, options) {
     //      code                css代码
     //      maybeSourceMap      初始映射源，不指定则新建，指定则累加
     //      maybeCallback       Function(error, output) 远程资源提取回调处理器，不指定则会删除 @import 远程导入，注意：一但传入此参数则 minify 变成异步且无返回值，数据需要从该函数的 output 中提取
-    new CleanCSS(options).minify(code, maybeSourceMap, maybeCallback);
+    return new CleanCSS(options).minify(code, maybeSourceMap, maybeCallback);
 }

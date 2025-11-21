@@ -108,5 +108,5 @@ module.exports.options = {
 }
 
 module.exports.run = async function (code, options) {
-    await minify(code, options);
+    return await minify(code, options);
 }

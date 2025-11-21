@@ -50,20 +50,20 @@ jsOptions           |string\|Function(code, options)   |[查看](lib/options.js)
 jsFileRule          |string\|RegExp     |js              |js文件匹配后缀名或正则
 htmlOptions         |string\|Function(code, options)   |[查看](lib/options.js)          |html压缩配置信息[参考](demo/html.js)
 htmlFileRule        |string\|RegExp     |html|htm        |html文件匹配后缀名或正则
-mangleClassIdentifiers         |false\|Object  |{}          |指定混淆class名的对照表（影响 html、css 文件），默认会生成混淆名
-mangleIdIdentifiers            |false\|Object  |{}          |指定混淆id名的对照表（影响 html、css 文件），默认会生成混淆名
-mangleCssVarIdentifiers        |false\|Object  |{}          |指定混淆css变量名的对照表（影响 html、css 文件），默认会生成混淆名
-mangleCssKeyframesIdentifiers  |false\|Object  |{}          |指定混淆css动画名的对照表（影响 html、css 文件），默认会生成混淆名
-mangleCssFontIdentifiers       |false\|Object  |{}          |指定混淆css字体名的对照表（影响 html、css 文件），默认会生成混淆名
+mangleClassIdentifiers         |false\|Object\|Array\|String  |{}          |指定混淆class名的对照表（影响 html、css 文件），{} 指定键名对照表，Array 指定保留原名，string 指定保留原名空格分隔，特殊符号不需要转义
+mangleIdIdentifiers            |false\|Object\|Array\|String  |{}          |指定混淆id名的对照表（影响 html、css 文件），{} 指定键名对照表，Array 指定保留原名，string 指定保留原名空格分隔，特殊符号不需要转义
+mangleCssVarIdentifiers        |false\|Object\|Array\|String  |{}          |指定混淆css变量名的对照表（影响 html、css 文件），{} 指定键名对照表，Array 指定保留原名，string 指定保留原名空格分隔，特殊符号不需要转义
+mangleCssKeyframesIdentifiers  |false\|Object\|Array\|String  |{}          |指定混淆css动画名的对照表（影响 html、css 文件），{} 指定键名对照表，Array 指定保留原名，string 指定保留原名空格分隔，特殊符号不需要转义
+mangleCssFontIdentifiers       |false\|Object\|Array\|String  |{}          |指定混淆css字体名的对照表（影响 html、css 文件），{} 指定键名对照表，Array 指定保留原名，string 指定保留原名空格分隔，特殊符号不需要转义
 cleanUnused         |boolean            |true               |是否删除未使用的id、class、var、font、animation。总开关
-removeUnusedIds             |false\|Object  |{}               |要删除的css的id选择器代码块（html中未使用），单独保留时使用 { "id名": false }
-removeUnusedClasses         |false\|Object  |{}               |要删除的css的class选择器代码块（html中未使用），单独保留时使用 { "class名": false }
-removeUnusedCssVars         |false\|Object  |{}               |要删除的css的变量代码块（定义和使用），单独保留时使用 { "var名": false }
-removeUnusedCssTags         |false\|Object  |{}               |要删除的css的标签选择器代码块（html中未使用），单独保留时使用 { "标签名": false }
-removeUnusedCssKeyframes    |false\|Object  |{}               |要删除的css的动画代码块（定义和使用），单独保留时使用 { "动画名": false }
-removeUnusedCssFonts        |false\|Object  |{}               |要删除的css字体样式代码（定义和使用），单独保留时使用 { "字体名": false }
+removeUnusedIds             |false\|Object  |{}               |要删除的css的id选择器代码块（html中未使用），单独保留时使用 { "id名": false }，特殊符号不需要转义
+removeUnusedClasses         |false\|Object  |{}               |要删除的css的class选择器代码块（html中未使用），单独保留时使用 { "class名": false }，特殊符号不需要转义
+removeUnusedCssVars         |false\|Object  |{}               |要删除的css的变量代码块（定义和使用），单独保留时使用 { "var名": false }，特殊符号不需要转义
+removeUnusedCssTags         |false\|Object  |{}               |要删除的css的标签选择器代码块（html中未使用），单独保留时使用 { "标签名": false }，特殊符号不需要转义
+removeUnusedCssKeyframes    |false\|Object  |{}               |要删除的css的动画代码块（定义和使用），单独保留时使用 { "动画名": false }，特殊符号不需要转义
+removeUnusedCssFonts        |false\|Object  |{}               |要删除的css字体样式代码（定义和使用），单独保留时使用 { "字体名": false }，特殊符号不需要转义
 removeHtmlAttrs       |Array\|Object\|Function(tag, attrName, attrValue)  |{}               |要删除的html属性
-makeSourceMap               |boolean            |false               |是否生成map文件，不建议开启
+makeSourceMap               |boolean            |false               |是否生成map文件，生产环境不建议使用
 skipFileRule                |false\|RegExp\|string            |false               |跳过处理文件
 ignoreCssSelectorError      |boolean            |true                |忽略css选择器错误语句
 skipControlCss      |boolean            |false                |忽略控件样式混淆，当有与js同名的css视为控件，可控件样式关联的标识不混淆或删除
