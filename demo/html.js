@@ -22,7 +22,7 @@ module.exports.options = {
     collapseInlineTagWhitespace: false, // 折叠时不要在元素之间留任何空格
     collapseWhitespace: false, // 折叠文档树中文本节点的空白区域
     conservativeCollapse: false, // 始终折叠到 1 个空格（永远不要完全删除它）。必须与 collapseWhitespace=true
-    continueOnParseError: false, // 处理解析错误，而不是中止。
+    continueOnParseError: false, // 跳过解析错误，而不是中止。
     // 配置自定义属性赋值符号正则表达式，标签属性赋值使用的是 =
     // 属性匹配是通过正则提取的，
     //      默认正则是   /^\s*([^\s"'<>/=]+)(?:\s*((?:=))[ \t\n\f\r]*(?:"([^"]*)"+|'([^']*)'+|([^ \t\n\f\r"'`=<>]+)))?/

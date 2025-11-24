@@ -1,6 +1,6 @@
 {
   "name": "web-clean",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "author": "ttl <ttlxihuan@163.com>",
   "description": "Web site minifier and clean",
   "license": "MIT",
@@ -29,7 +29,7 @@
   "dependencies": {
     "clean-css": "^5.0.0",
     "html-minifier-terser": "^7.0.0",
-    "sass": "^1.80.0",
+    "sass": "^1.90.0",
     "terser": "^5.30.0",
     "commander": "^10.0.0"
   },

@@ -90,6 +90,7 @@ program.option("--mangle-localize [paths]", "Confusing the local resource path a
 program.option("--absolute-path", "All local resources use absolute paths by default, with relative paths being the alternative.", false);
 program.option("--base-url [url]", "Specify the local base URL address. Using the --localize option is ineffective.", false);
 program.option("--make-source-map", "Generate source map files for compressed files.", false);
+program.option("--use-sass", "Use sass to compile css.", false);
 
 if (process.argv.length <= 2) {
     program.help();
@@ -153,7 +154,8 @@ if (options.mangleLocalize) {
     options.mangleLocalize = toConfig(_options.mangleLocalize);
 }
 
-['makeSourceMap', 'skipControlCss', 'localize', 'absolutePath', 'baseUrl'].forEach(key => {
+['makeSourceMap', 'skipControlCss', 'localize', 'absolutePath', 'baseUrl', 'useSass'].forEach(key => {
+    console.info(key, _options[key])
     options[key] = _options[key];
 });
 

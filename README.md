@@ -71,6 +71,7 @@ localize      |boolean            |false                |是下将远程资源�
 mangleLocalize      |false\|Object            |false                |指定混淆本地资源路径的对照表（影响非html文件），默认会生成混淆名，模板处理时慎用。
 absolutePath      |boolean            |false                |是否将本地路径改为绝对路径，模板处理时慎用。
 baseUrl      |boolean            |false                |给本地资源指定根地址，所有本地资源将按远程地址处理
+useSass      |boolean            |false                |是否使用sass编译css，默认解析不支持嵌套选择器
                                     
 ## 示例
 ```shell
